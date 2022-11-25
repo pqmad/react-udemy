@@ -5,7 +5,7 @@ export const ShowIncrement = memo(({incremento}) => {
     return (
         <button
             className="btn btn-primary mt-2"
-            onClick={() => {incremento();}}
+            onClick={() => {incremento(5);}}
         >
             Incrementar
         </button>
