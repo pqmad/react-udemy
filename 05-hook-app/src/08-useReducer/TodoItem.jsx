@@ -8,6 +8,7 @@ export const TodoItem = ({ todo, borrar, CambioEstado }) => {
             <h4
                 onClick={() => CambioEstado(id)}
                 className={`align-self-center ${done ? 'text-decoration-line-through' : ''}`}
+                aria-label='h4'
             >
                 {description}
             </h4>
