@@ -13,11 +13,22 @@ describe('Pruebas en <MainApp />', () => {
             </MemoryRouter>
         );
 
-        expect( screen.getByText('HomePage') ).toBeTruthy();
+        expect( screen.getByText('Main App') ).toBeTruthy();
         // screen.debug()
 
     });
+    test('debe de mostrar el LoginPage', () => {
+        
+        render( 
+            <MemoryRouter initialEntries={['/login']}>
+                <MainApp /> 
+            </MemoryRouter>
+        );
 
+        expect( screen.getByText('Login') ).toBeTruthy();
+        screen.debug()
+
+    });
     // test('debe de mostrar el LoginPage', () => {
         
     //     render( 
