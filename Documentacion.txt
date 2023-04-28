@@ -1,0 +1,18 @@
+##########################################################################################
+USANDO CDN -> PARA NO INSTALAR SE COPIA EL <link .../> EN EL HEAD DEL INDEX.HTML
+<head>
+  <link .../>
+</head>
+
+##########################################################################################
+PARA ANIMACIONES
+https://animate.style/
+
+
+ESTILOS
+https://getbootstrap.com/
+
+
+COMPONENTES -> MATERIAL UI
+https://mui.com/material-ui/getting-started/installation/
+
