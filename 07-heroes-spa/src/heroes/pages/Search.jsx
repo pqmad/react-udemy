@@ -12,6 +12,7 @@ export const Search = () => {
   const { q = "" } = queryString.parse(location.search)
   const hero = getHerobyName(q)
   const showSearch = (q === "") ? true : false
+  const showError = (!showSearch && hero.length === 0) ? true : false
   const { searchText, onInputChange } = useForm({ searchText: q })
 
 
@@ -54,10 +55,21 @@ export const Search = () => {
             && <div className="alert alert-danger">No se encontró el heroe <b>{q}</b></div>
           } */}
 
-          <div className="alert alert-info" style={{ display: showSearch ? '' : 'none' }}>Buscar un heroe...</div>
-          <div className="alert alert-danger"
-            style={{ display: (q !== "" && hero.length === 0) ? '' : 'none' }}
-          > No se encontró el heroe <b>{q}</b></div>
+          <div
+            className="alert alert-info animate__animated animate__fadeIn"
+            style={{ display: showSearch ? '' : 'none' }}
+          >
+            Buscar un heroe...
+          </div>
+
+          <div
+            className="alert alert-danger animate__animated animate__fadeIn"
+            style={{ display: (showError) ? '' : 'none' }}
+          >
+            No se encontró el heroe
+            <b>{q}</b>
+          </div>
+
           {
             hero?.map(h => (
               <HeroCard key={h.id} {...h} />
